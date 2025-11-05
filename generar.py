@@ -2,6 +2,8 @@ import csv
 import random
 from datetime import datetime, timedelta
 
+# Funciones auxiliares para generar datos aleatorios
+
 def generar_id(prefijo, longitud_numeros=4):
     """Genera un ID con números aleatorios seguidos de tres letras constantes"""
     numeros = ''.join([str(random.randint(0, 9)) for _ in range(longitud_numeros)])
@@ -36,19 +38,20 @@ def generar_cif():
     digito_control = random.randint(0, 9)
     return f"{letra}{numeros}{digito_control}"
 
-# CSV 1: VEHÍCULOS (14 campos)
+# CSV 1: VEHÍCULOS (12 campos)
 def generar_csv_vehiculos(nombre_archivo='vehiculos.csv', num_registros=50):
     marcas = ['Toyota', 'Ford', 'Volkswagen', 'Seat', 'Renault', 'Peugeot', 'BMW', 'Mercedes', 'Audi', 'Nissan']
     etiquetas = ['CSVModificacion']
-    colores = ['Blanco', 'Negro', 'Gris', 'Azul', 'Rojo', 'Verde', 'Plata']
+    notas = ['Vehiculo particular', 'Vehiculo de empresa']
+    acreditacion = ['ACR001', 'ACR002', 'ACR003', 'ACR004']
     
     with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file, delimiter=';')
         # Encabezados (14 campos)
         writer.writerow([
-            'Matricula', 'Marca', 'Modelo', 'Color', 'Notas', 'Etiqueta', 
+            'Matricula', 'Marca', 'Modelo', 'Notas', 'Etiqueta', 
             'TarjetaIdentificacion', 'Telefono', 'Email', 'CodigoAcreditacion',
-            'FechaInicioAcreditacion', 'FechaFinAcreditacion', 'DNI_Titular', 'Estado'
+            'FechaInicioAcreditacion', 'FechaFinAcreditacion', 'DNI_Titular'
         ])
         
         fecha_inicio = datetime(2024, 1, 1)
@@ -57,26 +60,32 @@ def generar_csv_vehiculos(nombre_archivo='vehiculos.csv', num_registros=50):
         for _ in range(num_registros):
             matricula = generar_id('CAR', 4)
             marca = random.choice(marcas)
-            modelo = f"{marca} {random.choice(['Sedan', 'SUV', 'Compact', 'Sport', 'Coupe'])}"
-            color = random.choice(colores)
-            notas = random.choice(['En buen estado', 'Requiere revisión', 'Nuevo', 'Mantenimiento programado', ''])
+            modelo = f"{marca} {random.choice(['Sedan', 'SUV', 'Compact', 'Sport', 'Coupe'])}"            
+            notas = random.choice(notas)
             etiqueta = random.choice(etiquetas)
             tarjeta = generar_id('TRJ', 6)
             telefono = generar_telefono()
             email = generar_email(f"vehiculo{random.randint(1, 1000)}")
-            codigo_acred = generar_id('ACR', 5)
-            fecha_inicio_acred = fecha_aleatoria(fecha_inicio, datetime(2025, 6, 1))
-            fecha_fin_acred = fecha_aleatoria(datetime(2025, 6, 1), fecha_fin)
-            dni = generar_dni()
-            estado = random.choice(['Activo', 'Inactivo', 'En revisión', 'Pendiente'])
+            tiene_acreditacion = random.choice([True, False])
+
+            if tiene_acreditacion:
+                codigo_acred = random.choice(acreditacion)
+                fecha_inicio_acred = fecha_aleatoria(fecha_inicio, datetime(2025, 6, 1))
+                fecha_fin_acred = fecha_aleatoria(datetime(2025, 6, 1), fecha_fin)
+                dni = ''  # Sin DNI si tiene acreditación
+            else:
+                codigo_acred = ''
+                fecha_inicio_acred = ''
+                fecha_fin_acred = ''
+                dni = generar_dni()  # Con DNI si no tiene acreditación
             
             writer.writerow([
-                matricula, marca, modelo, color, notas, etiqueta, tarjeta,
+                matricula, marca, modelo, notas, etiqueta, tarjeta,
                 telefono, email, codigo_acred, fecha_inicio_acred, 
-                fecha_fin_acred, dni, estado
+                fecha_fin_acred, dni
             ])
     
-    print(f"✓ CSV de vehículos generado: {nombre_archivo} ({num_registros} registros, 14 campos)")
+    print(f"✓ CSV de vehículos generado: {nombre_archivo} ({num_registros} registros, 12 campos)")
 
 # CSV 2: EMPRESA (6 campos)
 def generar_csv_empresa(nombre_archivo='empresa.csv', num_registros=50):
