@@ -42,8 +42,8 @@ def generar_csv_vehiculos(nombre_archivo='vehiculos.csv', num_registros=50):
     etiquetas = ['CSVModificacion']
     colores = ['Blanco', 'Negro', 'Gris', 'Azul', 'Rojo', 'Verde', 'Plata']
     
-    with open(nombre_archivo, 'w', newline='', encoding='utf-8', delimiter=';') as file:
-        writer = csv.writer(file)
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
         # Encabezados (14 campos)
         writer.writerow([
             'Matricula', 'Marca', 'Modelo', 'Color', 'Notas', 'Etiqueta', 
@@ -83,8 +83,8 @@ def generar_csv_empresa(nombre_archivo='empresa.csv', num_registros=50):
     sectores = ['Tecnología', 'Construcción', 'Servicios', 'Comercio', 'Industria', 'Consultoría']
     nombres_empresa = ['CedroSL', 'CerezoSL', 'CirueloSL', 'AguacateSL']
     
-    with open(nombre_archivo, 'w', newline='', encoding='utf-8', delimiter=';') as file:
-        writer = csv.writer(file)
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
         # Encabezados (6 campos)
         writer.writerow([
             'ID_Empresa', 'NombreEmpresa', 'CIF', 'Sector', 'Telefono', 'Email'
@@ -109,8 +109,8 @@ def generar_csv_persona(nombre_archivo='persona.csv', num_registros=50):
     nombres = ['Juan', 'María', 'Carlos', 'Ana', 'Pedro', 'Laura', 'Luis', 'Carmen', 'José', 'Isabel']
     apellidos = ['García', 'Rodríguez', 'López', 'Martínez', 'González', 'Pérez', 'Sánchez', 'Fernández']
     
-    with open(nombre_archivo, 'w', newline='', encoding='utf-8', delimiter=';') as file:
-        writer = csv.writer(file)
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
         # Encabezados (12 campos - puedo ampliarlo a 14 si me confirmas qué campos faltan)
         writer.writerow([
             'ID_Persona', 'Nombre', 'Apellidos', 'DNI', 'FechaNacimiento',
