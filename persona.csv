@@ -1,0 +1,51 @@
+ID_Persona,Nombre,Apellidos,DNI,FechaNacimiento,Telefono,Email,Direccion,CodigoPostal,Ciudad,Provincia,Estado
+05031PER,Isabel,García Pérez,51788670F,1995-02-05,+34 739 591 947,isabel47@outlook.com,Calle Luna 14,42740,Bilbao,Vizcaya,Activo
+28467PER,Laura,González Pérez,13099198P,1952-12-03,+34 601 257 612,laura168@gmail.com,Calle Mayor 23,45260,Bilbao,Vizcaya,Activo
+44891PER,Carlos,Rodríguez Martínez,28353259D,1969-10-24,+34 639 742 124,carlos452@hotmail.com,Calle Sol 19,38767,Málaga,Málaga,Inactivo
+87048PER,Ana,González Martínez,52958465E,1981-04-12,+34 673 984 269,ana26@outlook.com,Calle Mayor 100,28819,Málaga,Málaga,Pendiente verificación
+91605PER,Carlos,González Rodríguez,42152725G,1972-11-29,+34 633 805 859,carlos992@gmail.com,Calle Sol 38,52890,Barcelona,Barcelona,Inactivo
+74052PER,Ana,Rodríguez Fernández,34833627N,1969-08-02,+34 788 853 382,ana93@live.es,Calle Real 17,11147,Bilbao,Vizcaya,Pendiente verificación
+33265PER,Ana,González García,97408370N,1951-05-18,+34 756 634 404,ana774@outlook.com,Calle Luna 74,44941,Bilbao,Vizcaya,Activo
+11389PER,Carlos,García Martínez,74766969H,1955-04-30,+34 796 449 382,carlos581@gmail.com,Calle Real 83,27386,Barcelona,Barcelona,Activo
+98840PER,Ana,Fernández López,47150526C,1961-01-04,+34 751 470 631,ana30@live.es,Calle Luna 24,20815,Málaga,Málaga,Activo
+91890PER,Luis,García Rodríguez,53768127S,1977-10-12,+34 702 370 359,luis768@gmail.com,Calle Mayor 26,38320,Barcelona,Barcelona,Pendiente verificación
+05696PER,Juan,López Martínez,69723622L,1977-01-16,+34 756 823 133,juan574@outlook.com,Calle Real 46,49592,Barcelona,Barcelona,Activo
+75604PER,Carlos,Martínez Pérez,87789448N,1994-12-29,+34 674 920 541,carlos508@hotmail.com,Calle Mayor 19,38894,Sevilla,Sevilla,Activo
+11824PER,Ana,Rodríguez Fernández,14035232B,1998-08-11,+34 606 936 697,ana862@live.es,Calle Luna 69,50972,Santander,Cantabria,Inactivo
+68012PER,Carlos,Rodríguez Rodríguez,24537224L,1973-03-06,+34 762 930 724,carlos19@live.es,Calle Sol 41,49240,Bilbao,Vizcaya,Pendiente verificación
+36644PER,María,Sánchez González,88058312Y,1991-12-23,+34 620 661 748,maría573@gmail.com,Calle Sol 13,27171,Valencia,Valencia,Inactivo
+34084PER,José,Rodríguez Martínez,38803987C,1987-03-03,+34 602 970 367,josé789@outlook.com,Calle Real 15,27737,Sevilla,Sevilla,Activo
+45314PER,Pedro,Fernández Fernández,34354576M,1954-02-13,+34 676 414 664,pedro227@hotmail.com,Calle Luna 96,31385,Sevilla,Sevilla,Inactivo
+13217PER,María,González Pérez,32796671M,1979-09-01,+34 787 953 407,maría18@gmail.com,Calle Real 66,44855,Madrid,Madrid,Activo
+81754PER,Ana,Pérez García,14930110M,1962-03-30,+34 621 765 926,ana250@hotmail.com,Calle Luna 12,38566,Madrid,Madrid,Inactivo
+13180PER,Laura,Martínez Martínez,40142706R,1986-01-05,+34 604 759 209,laura676@hotmail.com,Calle Mayor 28,42757,Málaga,Málaga,Inactivo
+04169PER,Isabel,González López,61499865G,1965-11-21,+34 680 239 605,isabel588@outlook.com,Calle Real 57,48418,Valencia,Valencia,Activo
+21002PER,Carmen,Pérez Rodríguez,76460474X,2001-07-16,+34 789 697 519,carmen783@outlook.com,Calle Luna 85,26977,Valencia,Valencia,Inactivo
+49357PER,Ana,García López,26758975Q,1961-08-31,+34 735 859 915,ana908@gmail.com,Calle Sol 19,24794,Bilbao,Vizcaya,Inactivo
+09383PER,Pedro,Fernández González,89829064B,1965-02-18,+34 703 696 593,pedro401@live.es,Calle Sol 59,31292,Sevilla,Sevilla,Activo
+71016PER,Isabel,González López,65834571S,1997-12-14,+34 652 104 596,isabel181@outlook.com,Calle Mayor 37,48676,Santander,Cantabria,Pendiente verificación
+96910PER,Isabel,García Pérez,28175863N,1962-08-04,+34 758 960 451,isabel741@hotmail.com,Calle Mayor 60,28309,Madrid,Madrid,Activo
+53697PER,José,Martínez Sánchez,30306561J,1993-05-06,+34 656 492 170,josé553@outlook.com,Calle Sol 17,43741,Málaga,Málaga,Inactivo
+29807PER,Isabel,Rodríguez Fernández,81352102K,1998-06-05,+34 705 666 377,isabel714@hotmail.com,Calle Real 77,16396,Málaga,Málaga,Activo
+49331PER,Carlos,Sánchez González,92523753C,1954-02-17,+34 661 115 510,carlos790@gmail.com,Calle Luna 84,52681,Santander,Cantabria,Inactivo
+07537PER,Pedro,López Pérez,78698178K,1988-03-07,+34 796 314 173,pedro264@live.es,Calle Mayor 2,21430,Málaga,Málaga,Activo
+45313PER,Isabel,Martínez Fernández,54455687J,1951-09-22,+34 639 394 241,isabel4@hotmail.com,Calle Mayor 79,27037,Santander,Cantabria,Pendiente verificación
+23955PER,Ana,González González,59855587L,1995-03-19,+34 797 289 887,ana647@gmail.com,Calle Real 35,37204,Santander,Cantabria,Activo
+33575PER,Isabel,González González,42586988G,2003-11-21,+34 650 703 864,isabel475@outlook.com,Calle Real 81,39103,Bilbao,Vizcaya,Inactivo
+11257PER,Pedro,Fernández López,16956558S,1996-04-26,+34 716 249 846,pedro228@gmail.com,Calle Mayor 87,22383,Santander,Cantabria,Pendiente verificación
+87705PER,Isabel,González Martínez,15996725H,1964-02-02,+34 733 897 759,isabel270@gmail.com,Calle Luna 3,33834,Santander,Cantabria,Pendiente verificación
+17669PER,Carlos,Fernández Pérez,31775810E,1951-10-02,+34 753 360 350,carlos69@live.es,Calle Luna 39,36956,Málaga,Málaga,Inactivo
+17446PER,Pedro,López García,65057276M,1951-05-28,+34 786 286 581,pedro860@hotmail.com,Calle Luna 78,51092,Barcelona,Barcelona,Activo
+28904PER,Carmen,González Fernández,87176919L,1977-04-09,+34 726 998 305,carmen49@gmail.com,Calle Sol 20,42778,Madrid,Madrid,Pendiente verificación
+65874PER,Carmen,Fernández García,87585643X,1965-08-12,+34 627 939 147,carmen780@hotmail.com,Calle Real 63,14248,Bilbao,Vizcaya,Activo
+65484PER,Ana,Fernández García,73455275Z,1984-12-17,+34 773 956 574,ana63@outlook.com,Calle Sol 36,50166,Barcelona,Barcelona,Pendiente verificación
+33044PER,Pedro,Rodríguez Martínez,72905140Q,1982-08-06,+34 660 139 722,pedro362@outlook.com,Calle Mayor 46,33991,Barcelona,Barcelona,Pendiente verificación
+98727PER,Carlos,Sánchez López,49993666S,1957-02-10,+34 620 744 289,carlos673@live.es,Calle Mayor 82,41019,Bilbao,Vizcaya,Pendiente verificación
+28038PER,Ana,López García,99532792Q,2004-01-17,+34 643 353 716,ana79@hotmail.com,Calle Luna 61,45708,Valencia,Valencia,Activo
+88371PER,María,Martínez Rodríguez,94528090E,1957-12-27,+34 652 964 544,maría687@gmail.com,Calle Luna 8,43062,Santander,Cantabria,Inactivo
+47119PER,Isabel,Rodríguez Martínez,35538465S,1978-06-06,+34 709 195 382,isabel766@gmail.com,Calle Mayor 90,44976,Valencia,Valencia,Activo
+13291PER,Carlos,González González,14162193N,1965-12-10,+34 739 253 310,carlos91@hotmail.com,Calle Mayor 4,29604,Málaga,Málaga,Activo
+22670PER,Ana,López Martínez,87077164S,2003-05-20,+34 666 442 790,ana858@outlook.com,Calle Mayor 63,16595,Valencia,Valencia,Pendiente verificación
+05223PER,Carmen,Martínez Fernández,26747351F,1953-06-19,+34 608 279 989,carmen863@outlook.com,Calle Mayor 82,43540,Málaga,Málaga,Inactivo
+60984PER,Pedro,Pérez Sánchez,11500294H,1958-05-14,+34 738 271 315,pedro688@live.es,Calle Mayor 25,48112,Sevilla,Sevilla,Activo
+29159PER,Luis,García Rodríguez,34735973Q,1953-01-04,+34 755 304 831,luis671@hotmail.com,Calle Sol 63,35987,Valencia,Valencia,Pendiente verificación
