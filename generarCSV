@@ -1,0 +1,169 @@
+import csv
+import random
+from datetime import datetime, timedelta
+
+# Funciones auxiliares para generar datos aleatorios
+
+#CONSTANTES
+empresas = ['AbedulSL', 'CipressSL', 'AvellanoSL']
+etiquetas = 'CSVModificacion'
+nombres = ['Juan', 'Maria', 'Carlos', 'Ana', 'Pedro', 'Laura', 'Luis', 'Carmen', 'Jose', 'Isabel']
+acreditacion = ['1HK33MWJ', 'D5CZ0FTQ', '']
+    
+def generar_id(prefijo, longitud_numeros=4):
+    """Genera un ID con números aleatorios seguidos de tres letras constantes"""
+    numeros = ''.join([str(random.randint(0, 9)) for _ in range(longitud_numeros)])
+    return f"{numeros}{prefijo}"
+
+def fecha_aleatoria(inicio, fin):
+    """Genera una fecha aleatoria entre dos fechas"""
+    delta = fin - inicio
+    dias_aleatorios = random.randrange(delta.days)
+    return (inicio + timedelta(days=dias_aleatorios)).strftime('%Y-%m-%d')
+
+def generar_telefono():
+    """Genera un número de teléfono español"""
+    return f"+34 {random.randint(600, 799)} {random.randint(100, 999)} {random.randint(100, 999)}"
+
+def generar_email(nombre):
+    """Genera un email aleatorio"""
+    dominios = ['gmail.com', 'hotmail.com', 'live.es', 'outlook.com']
+    return f"{nombre.lower().replace(' ', '')}{random.randint(1, 999)}@{random.choice(dominios)}"
+
+def generar_dni():
+    """Genera un DNI español"""
+    letras = 'TRWAGMYFPDXBNJZSQVHLCKE'
+    numero = random.randint(10000000, 99999999)
+    return f"{numero}{letras[numero % 23]}"
+
+def generar_cif():
+    """Genera un CIF español"""
+    letras_inicio = 'ABCDEFGHJNPQRSUVW'
+    letra = random.choice(letras_inicio)
+    numeros = ''.join([str(random.randint(0, 9)) for _ in range(7)])
+    digito_control = random.randint(0, 9)
+    return f"{letra}{numeros}{digito_control}"
+
+# CSV 1: VEHÍCULOS (12 campos)
+def generar_csv_vehiculos(nombre_archivo='vehiculos.csv', num_registros=50):
+    marcas = ['Toyota', 'Ford', 'Volkswagen', 'Seat', 'Renault', 'Peugeot', 'BMW', 'Mercedes', 'Audi', 'Nissan']    
+    notas = ['Vehiculo particular', 'Vehiculo de empresa']
+    
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
+        # Encabezados (12campos)
+        '''writer.writerow([
+            'Matricula', 'Marca', 'Modelo', 'Notas', 'Etiqueta', 
+            'TarjetaIdentificacion', 'Empresa', 'Email', 'CodigoAcreditacion',
+            'FechaInicioAcreditacion', 'FechaFinAcreditacion', 'DNI_Titular'
+        ])'''
+        
+        fecha_inicio = datetime(2024, 1, 1)
+        fecha_fin = datetime(2025, 12, 31)
+        
+        for _ in range(num_registros):
+            matricula = generar_id('CAR', 4)
+            marca = random.choice(marcas)
+            modelo = f"{marca} {random.choice(['Sedan', 'SUV', 'Compact', 'Sport', 'Coupe'])}"            
+            nota = random.choice(notas)            
+            tarjeta = ''
+            empresa = random.choice(empresas)
+            email = generar_email(f"vehiculo{random.randint(1, 1000)}")
+            tiene_acreditacion = random.choice([True, False])
+
+            if tiene_acreditacion:
+                codigo_acred = random.choice(acreditacion)
+                fecha_inicio_acred = fecha_aleatoria(fecha_inicio, datetime(2025, 6, 1))
+                fecha_fin_acred = fecha_aleatoria(datetime(2025, 6, 1), fecha_fin)
+                dni = ''  # Sin DNI si tiene acreditación
+            else:
+                codigo_acred = ''
+                fecha_inicio_acred = ''
+                fecha_fin_acred = ''
+                dni = generar_dni()  # Con DNI si no tiene acreditación
+            
+            writer.writerow([
+                matricula, marca, modelo, nota, etiquetas, tarjeta,
+                empresa, email, codigo_acred, fecha_inicio_acred, 
+                fecha_fin_acred, dni
+            ])
+    
+    print(f"✓ CSV de vehículos generado: {nombre_archivo} ({num_registros} registros, 12 campos)")
+
+# CSV 2: EMPRESA (6 campos)
+def generar_csv_empresa(nombre_archivo='empresa.csv', num_registros=50):
+    
+    
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
+        # Encabezados (6 campos)
+        ''' writer.writerow([
+            'ID_Empresa', 'NombreEmpresa', 'CIF', 'Sector', 'Telefono', 'Email'
+        ])'''
+        
+        for _ in range(num_registros):
+            nombre = random.choice(empresas)
+            cif = generar_cif()            
+            telefono = generar_telefono()
+            contacto = random.choice(nombres)
+            #etiqueta = random.choice(etiquetas)
+            email = generar_email(f"{contacto}{random.randint(1, 999)}")
+            
+            writer.writerow([
+                nombre, cif, etiquetas, contacto, telefono, email
+            ])
+    
+    print(f"✓ CSV de empresa generado: {nombre_archivo} ({num_registros} registros, 6 campos)")
+
+# CSV 3: PERSONA (12 campos - ajustar a 14 si confirmas los campos)
+def generar_csv_persona(nombre_archivo='persona.csv', num_registros=50):
+    
+    apellidos = ['García', 'Rodríguez', 'López', 'Martínez', 'González', 'Pérez', 'Sánchez', 'Fernández']
+    notas = ['Responsable', 'Gerente', 'Director']
+    with open(nombre_archivo, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=';')
+        # Encabezados (12 campos - puedo ampliarlo a 14 si me confirmas qué campos faltan)
+        '''writer.writerow([
+            'ID_Persona', 'Nombre', 'Apellidos', 'DNI', 'FechaNacimiento',
+            'Telefono', 'Email', 'Direccion', 'CodigoPostal', 'Ciudad', 
+            'Provincia', 'Estado'
+        ])'''
+        
+        fecha_inicio = datetime(2024, 1, 1)
+        fecha_fin = datetime(2025, 12, 30)
+        
+        
+        
+        for i in range(num_registros):
+            
+            dni = generar_dni()
+            vehiculo = generar_id('CAR',4)
+            nombre = random.choice(nombres)
+            apellido = f"{random.choice(apellidos)} {random.choice(apellidos)}"            
+            codigoUsuario = ''
+            telefono = generar_telefono()
+            email = generar_email(nombre)
+            nota = random.choice(notas)
+            tarjeta = ''
+            empresa = random.choice(empresas)
+            codigo_acred = random.choice(acreditacion)
+            fecha_inicio_acred = fecha_aleatoria(fecha_inicio, datetime(2025, 6, 1))
+            fecha_fin_acred = fecha_aleatoria(datetime(2025, 6, 1), fecha_fin)
+            
+            writer.writerow([
+                dni, nombre, apellido, codigoUsuario,
+                telefono, etiquetas, nota,  tarjeta,vehiculo, empresa,email, codigo_acred, 
+                fecha_inicio_acred, fecha_fin_acred
+            ])
+    
+    print(f"✓ CSV de persona generado: {nombre_archivo} ({num_registros} registros, 14 campos)")
+
+# Ejecutar la generación de los tres CSV
+if __name__ == "__main__":
+    print("Generando archivos CSV...\n")
+    
+    generar_csv_vehiculos('vehiculos.csv', 5)
+    generar_csv_empresa('empresa.csv', 10)
+    generar_csv_persona('persona.csv', 10)
+    
+    print("\n¡Todos los archivos CSV han sido generados exitosamente!")
